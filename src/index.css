@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 10mm 12mm;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html, body {
+    background-color: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  aside, nav, header {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Sheet pagination styles for physical printing */
+  .paper-page-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .paper-page-sheet:not(:last-child) {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .page-break-always {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .question-tr, tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+}

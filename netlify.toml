@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# 1. API Route: Forward all /api/* requests to Netlify serverless function
+# This rule MUST be evaluated first before the SPA fallback (force = true)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+# 2. SPA Route: Fallback all client-side navigation to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

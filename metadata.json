@@ -1,0 +1,6 @@
+{
+  "name": "MSAJCE Question Paper Management System",
+  "description": "Autonomous college academic system to manage subject-wise question banks and automatically generate Internal Assessment and End Semester examination papers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
